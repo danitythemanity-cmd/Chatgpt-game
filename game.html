@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starcade Arcade | Nebula Drift</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"></div>
+  <header>
+    <nav class="navbar">
+      <a class="logo" href="index.html">
+        <span>★</span>
+        Starcade Arcade
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="hub.html">Game Hub</a>
+        <a href="game.html">Play Nebula Drift</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1>Nebula Drift</h1>
+      <p class="instructions">
+        Glide through shifting asteroid lanes. Collect energy orbs for points, avoid impact damage, and survive as long
+        as you can. Sound effects are generated live, so turn up your volume.
+      </p>
+    </section>
+
+    <section class="game-wrapper">
+      <div class="game-panel">
+        <div class="hud">
+          <div>Score: <span id="score">0</span></div>
+          <div>High Score: <span id="highScore">0</span></div>
+          <div>Shield: <span id="shield">3</span></div>
+        </div>
+        <div class="canvas-shell">
+          <canvas id="gameCanvas" width="960" height="540"></canvas>
+          <div class="overlay active" id="overlay">
+            <div class="overlay-card">
+              <h2 id="overlayTitle">Ready to Drift?</h2>
+              <p id="overlayMessage">Collect energy orbs, dodge asteroids, and build combos.</p>
+              <button class="button" id="startButton">Start Run</button>
+            </div>
+          </div>
+        </div>
+        <div class="control-panel">
+          <button class="button secondary" id="restartButton" type="button">Restart</button>
+          <button class="toggle" id="soundToggle" type="button" aria-pressed="true">
+            🔊 Sound: On
+          </button>
+        </div>
+        <div class="mobile-controls" aria-label="Touch controls">
+          <button type="button" data-dir="up">▲</button>
+          <button type="button" data-dir="left">◀</button>
+          <button type="button" data-dir="down">▼</button>
+          <button type="button" data-dir="right">▶</button>
+        </div>
+        <p class="instructions">
+          Controls: WASD / Arrow keys to steer. On touch devices, drag on the canvas or use the on-screen pad.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Tip: Chain orb pickups to increase your combo multiplier.
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
